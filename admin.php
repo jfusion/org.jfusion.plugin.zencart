@@ -49,7 +49,7 @@ class Admin extends \JFusion\Plugin\Admin
      */
     function setupFromPath($softwarePath)
     {
-        $myfile = $softwarePath . 'includes' . DIRECTORY_SEPARATOR . 'configure.php';
+        $myfile = $softwarePath . 'includes/configure.php';
         $enable_ssl = false;
 
         $params = array();
@@ -62,7 +62,6 @@ class Admin extends \JFusion\Plugin\Admin
         } else {
             include_once($myfile);
             //save the parameters into array
-
 
             $params['database_host'] = DB_SERVER;
             $params['database_name'] = DB_DATABASE;
