@@ -52,7 +52,7 @@ class User extends \JFusion\Plugin\User
             $query = $db->getQuery(true)
                 ->select('customers_id')
                 ->from('#__customers')
-                ->where($identifier_type . ' = ' . $db->Quote($identifier));
+                ->where($db->quoteName($identifier_type) . ' = ' . $db->Quote($identifier));
 
             $db->setQuery($query);
             $userid = $db->loadResult();
@@ -464,8 +464,8 @@ class User extends \JFusion\Plugin\User
 		    //set the usergroup in the user table
 		    $query = $db->getQuery(true)
 			    ->update('#__customers')
-			    ->set('customers_group_pricing = ' . $usergroup)
-			    ->where('entity_id  = ' . $existinguser->userid);
+			    ->set('customers_group_pricing = ' . $db->quote($usergroup))
+			    ->where('entity_id  = ' . (int)$existinguser->userid);
 
 		    $db->setQuery($query);
 		    $db->execute();
