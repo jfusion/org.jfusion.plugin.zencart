@@ -134,17 +134,6 @@ class User extends \JFusion\Plugin\User
     }
 
     /**
-     * @param string $username
-     *
-     * @return string
-     */
-    function filterUsername($username)
-    {
-        //no username filtering implemented yet
-        return $username;
-    }
-
-    /**
      * @param Userinfo $userinfo
      * @param Userinfo &$existinguser
      *
