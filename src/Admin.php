@@ -77,7 +77,7 @@ class Admin extends \JFusion\Plugin\Admin
             if (defined('DB_TYPE')) {
                 $params['database_type'] = DB_TYPE;
             }
-            if  (ENABLE_SSL != 'false'){
+            if  (ENABLE_SSL != 'false') {
                 $params['source_url'] = HTTPS_SERVER . DIR_WS_CATALOG;
             } else  {
                 $params['source_url'] = HTTP_SERVER . DIR_WS_CATALOG;
